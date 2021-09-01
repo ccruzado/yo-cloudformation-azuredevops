@@ -1,0 +1,55 @@
+Parameters:
+  InstanceType:
+    Type: String
+    Default: t3.medium
+  ImageId:
+    Type: AWS::EC2::Image::Id
+    Default: ami-0affd4508a5d2481b
+  KeyName:
+    Type: String
+    Default: kp-agrovet
+  NetworkStack:
+    Type: String
+    Default: stack-vpc
+Resources:
+  EC2InstanceCentos: 
+    Type: AWS::EC2::Instance
+    Properties: 
+      BlockDeviceMappings:
+      - DeviceName: /dev/sda1
+        Ebs:
+          VolumeSize: 50
+          VolumeType: gp2      
+      ImageId: !Ref ImageId
+      InstanceType: !Ref InstanceType
+      KeyName: !Ref KeyName
+      NetworkInterfaces: 
+        - AssociatePublicIpAddress: true
+          DeviceIndex: "0"
+          GroupSet: 
+            - !Ref EC2SecurityGroupCentos
+          SubnetId: 
+            Fn::ImportValue: !Sub ${NetworkStack}-PublicSubnet1
+      Tags:
+        - Key: Name
+          Value: ec2-centos
+  
+  EC2SecurityGroupCentos:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: sgr-ec2-centos
+      GroupDescription: sgr-ec2-centos
+      VpcId:
+        Fn::ImportValue: !Sub ${NetworkStack}-VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: sgr-ec2-centos
