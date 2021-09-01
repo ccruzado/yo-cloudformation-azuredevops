@@ -1,0 +1,8 @@
+- ParameterKey: InstanceType
+  ParameterValue: AWS_EC2_INSTANCETYPE
+- ParameterKey: ImageId
+  ParameterValue: AWS_EC2_IMAGEID
+- ParameterKey: KeyName
+  ParameterValue: AWS_EC2_KEYNAME
+- ParameterKey: NetworkStack
+  ParameterValue: CLOUDFORMATION_NETWORKSTACK
