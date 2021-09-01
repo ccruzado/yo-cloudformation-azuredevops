@@ -1,0 +1,16 @@
+- ParameterKey: Empresa
+  ParameterValue: EMPRESA
+- ParameterKey: VpcCIDR
+  ParameterValue: AWS_VPC_CIDR
+- ParameterKey: PublicSubnet1CIDR
+  ParameterValue: AWS_SN_PUB01_CIDR
+- ParameterKey: PublicSubnet2CIDR
+  ParameterValue: AWS_SN_PUB02_CIDR
+- ParameterKey: PrivateSubnet1CIDR
+  ParameterValue: AWS_SN_PRI01_CIDR
+- ParameterKey: PrivateSubnet2CIDR
+  ParameterValue: AWS_SN_PRI02_CIDR      
+- ParameterKey: DatabaseSubnet1CIDR
+  ParameterValue: AWS_SN_DB01_CIDR 
+- ParameterKey: DatabaseSubnet2CIDR
+  ParameterValue: AWS_SN_DB02_CIDR   
