@@ -1,0 +1,12 @@
+- ParameterKey: AwsDBInstanceClass
+  ParameterValue: AWS_RDS_INSTANCECLASS
+- ParameterKey: AwsRdsDatabaseName
+  ParameterValue: AWS_RDS_DATABASE_NAME
+- ParameterKey: AwsRdsMasterUsername
+  ParameterValue: AWS_RDS_USER_NAME
+- ParameterKey: AwsRdsMasterUserPassword
+  ParameterValue: AWS_RDS_USER_PASSWORD
+- ParameterKey: AwsSecurityGroupCidr
+  ParameterValue: AWS_RDS_SG_CIDR
+- ParameterKey: NetworkStack
+  ParameterValue: CLOUDFORMATION_NETWORKSTACK
