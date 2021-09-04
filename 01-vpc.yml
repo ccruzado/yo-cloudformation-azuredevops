@@ -126,7 +126,7 @@ Resources:
     Type: AWS::EC2::NatGateway
     Properties:
       AllocationId: !GetAtt NatGateway1EIP.AllocationId
-      SubnetId: !Ref PublicSubnet1
+      SubnetId: !Ref PublicSubnet2
       Tags:
         - Key: Name
           Value: NATGW 01
